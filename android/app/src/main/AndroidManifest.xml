@@ -1,9 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="petraa.com.reza.petra">
+    package="ir.petraa.petraa">
    <application
-        android:label="petra"
-        android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:label="petraa"
+        android:name="${applicationName}">
         <activity
             android:name=".MainActivity"
             android:exported="true"

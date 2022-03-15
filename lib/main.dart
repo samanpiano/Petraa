@@ -43,14 +43,7 @@ class MyStatefulWidget extends StatefulWidget {
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
   static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static List<Widget> _widgetOptions = <Widget>[
-    Text("infrx"),
-    Text(
-      'Index 1: Business',
-      style: optionStyle,
-    ),
-  ];
+  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   void _onItemTapped(int index) {
     setState(() {
@@ -62,7 +55,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   @override
   final pages = List.generate(
       5,
-      (index) => Container(
+          (index) => Container(
           margin: EdgeInsets.only(left: 5, right: 5),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
@@ -89,10 +82,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                           "از کجا برنامه نویسی رو شروع کنم؟",
                           textDirection: TextDirection.rtl,
                           style: TextStyle(
-                            fontFamily: 'Vazir',
-                            fontSize: 14,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold
+                              fontFamily: 'Vazir',
+                              fontSize: 14,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold
                           ),
                         ),
                       ),
@@ -197,7 +190,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                               padding: EdgeInsets.all(5),
                               child: Center(
                                 child: Text(
-                                  "ویرایش",
+                                  "همه",
                                   textDirection: TextDirection.rtl,
                                   style: TextStyle(
                                       fontFamily: 'Vazir',
@@ -235,10 +228,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                     color: Colors.lightGreen[200],
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(20)),
+                                        BorderRadius.circular(20)),
                                     elevation: 2,
                                     margin:
-                                        EdgeInsets.only(right: 5, bottom: 2),
+                                    EdgeInsets.only(right: 5, bottom: 2),
                                     child: Padding(
                                       padding: EdgeInsets.only(
                                           top: 5,
@@ -247,7 +240,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                           bottom: 10),
                                       child: Column(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           //Image.asset(name),
                                           Image.asset(
@@ -259,7 +252,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                             'زبان انگلیسی',
                                             textDirection: TextDirection.rtl,
                                             style:
-                                                TextStyle(fontFamily: 'Vazir'),
+                                            TextStyle(fontFamily: 'Vazir'),
                                           ),
                                           Text(
                                             '۲۹ کلاس',
@@ -280,10 +273,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                     color: Colors.red[200],
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(20)),
+                                        BorderRadius.circular(20)),
                                     elevation: 2,
                                     margin:
-                                        EdgeInsets.only(right: 5, bottom: 2),
+                                    EdgeInsets.only(right: 5, bottom: 2),
                                     child: Padding(
                                       padding: EdgeInsets.only(
                                           top: 5,
@@ -292,7 +285,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                           bottom: 10),
                                       child: Column(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           //Image.asset(name),
                                           Image.asset(
@@ -304,7 +297,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                             'برنامه نویسی',
                                             textDirection: TextDirection.rtl,
                                             style:
-                                                TextStyle(fontFamily: 'Vazir'),
+                                            TextStyle(fontFamily: 'Vazir'),
                                           ),
                                           Text(
                                             '۱۲ کلاس',
@@ -325,10 +318,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                     color: Colors.pink[200],
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(20)),
+                                        BorderRadius.circular(20)),
                                     elevation: 2,
                                     margin:
-                                        EdgeInsets.only(right: 5, bottom: 2),
+                                    EdgeInsets.only(right: 5, bottom: 2),
                                     child: Padding(
                                       padding: EdgeInsets.only(
                                           top: 5,
@@ -337,7 +330,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                           bottom: 10),
                                       child: Column(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           //Image.asset(name),
                                           Image.asset(
@@ -349,7 +342,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                             'انگیزشی',
                                             textDirection: TextDirection.rtl,
                                             style:
-                                                TextStyle(fontFamily: 'Vazir'),
+                                            TextStyle(fontFamily: 'Vazir'),
                                           ),
                                           Text(
                                             '۷۸ کلاس',
@@ -370,10 +363,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                     color: Colors.orange[200],
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
-                                            BorderRadius.circular(20)),
+                                        BorderRadius.circular(20)),
                                     elevation: 2,
                                     margin:
-                                        EdgeInsets.only(right: 5, bottom: 2),
+                                    EdgeInsets.only(right: 5, bottom: 2),
                                     child: Padding(
                                       padding: EdgeInsets.only(
                                           top: 5,
@@ -382,7 +375,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                           bottom: 10),
                                       child: Column(
                                         mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
+                                        MainAxisAlignment.spaceBetween,
                                         children: [
                                           //Image.asset(name),
                                           Image.asset(
@@ -394,7 +387,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                             'زبان آلمانی',
                                             textDirection: TextDirection.rtl,
                                             style:
-                                                TextStyle(fontFamily: 'Vazir'),
+                                            TextStyle(fontFamily: 'Vazir'),
                                           ),
                                           Text(
                                             '۱۷ کلاس',
@@ -463,7 +456,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                         Container(
                             margin: EdgeInsets.only(top: 1),
                             decoration:
-                                BoxDecoration(color: Colors.transparent),
+                            BoxDecoration(color: Colors.transparent),
                             height: 200,
                             width: double.infinity,
                             child: PageView(
@@ -542,7 +535,7 @@ Widget lesson_card(String name, String desc, String image_addr) {
                             Container(
                               child: Column(
                                   mainAxisAlignment:
-                                      MainAxisAlignment.spaceBetween,
+                                  MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
                                       name,
@@ -583,7 +576,7 @@ Widget lesson_card(String name, String desc, String image_addr) {
                                             width: 30,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(50.0),
+                                          BorderRadius.circular(50.0),
                                         ),
                                       ),
                                     ],
