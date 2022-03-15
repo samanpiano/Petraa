@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:clay_containers/clay_containers.dart';
-
-//import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:glassmorphism_ui/glassmorphism_ui.dart';
 
 //
 //Color _getColorFromHex(String hexColor) {
@@ -42,8 +38,6 @@ class MyStatefulWidget extends StatefulWidget {
 
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
 
   void _onItemTapped(int index) {
     setState(() {
@@ -52,7 +46,6 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
 
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
-  @override
   final pages = List.generate(
       5,
           (index) => Container(
@@ -114,6 +107,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             ),
           )));
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
@@ -122,55 +116,53 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         child: Column(
           children: [
             Container(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.blueGrey[50],
-                  shape: BoxShape.rectangle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
-                      spreadRadius: 3,
-                      blurRadius: 4,
-                      offset: Offset(0, 0.5), // changes position of shadow
+              decoration: BoxDecoration(
+                color: Colors.blueGrey[50],
+                shape: BoxShape.rectangle,
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 3,
+                    blurRadius: 4,
+                    offset: Offset(0, 0.5), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: Padding(
+                padding: EdgeInsets.only(top: 15, right: 15, left: 15),
+                child: Column(
+                  children: [
+                    searchTab(),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      // color: _getColorFromHex('#E0E5EC'),
+                      height: 130,
+                      child: Padding(
+                        padding: EdgeInsets.all(7),
+                        child: PageView.builder(
+                          controller: controller,
+                          itemBuilder: (_, index) {
+                            return pages[index % pages.length];
+                          },
+                        ),
+                      ),
+                      //decoration: BoxDecoration(color: Colors.transparent),
+                    ),
+                    SmoothPageIndicator(
+                      controller: controller,
+                      count: pages.length,
+                      effect: WormEffect(
+                        dotHeight: 5,
+                        dotWidth: 5,
+                      ),
+                    ),
+                    SizedBox(
+                      height: 7,
                     ),
                   ],
-                ),
-                child: Padding(
-                  padding: EdgeInsets.only(top: 15, right: 15, left: 15),
-                  child: Column(
-                    children: [
-                      searchTab(),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Container(
-                        width: double.infinity,
-                        // color: _getColorFromHex('#E0E5EC'),
-                        height: 130,
-                        child: Padding(
-                          padding: EdgeInsets.all(7),
-                          child: PageView.builder(
-                            controller: controller,
-                            itemBuilder: (_, index) {
-                              return pages[index % pages.length];
-                            },
-                          ),
-                        ),
-                        //decoration: BoxDecoration(color: Colors.transparent),
-                      ),
-                      SmoothPageIndicator(
-                        controller: controller,
-                        count: pages.length,
-                        effect: WormEffect(
-                          dotHeight: 5,
-                          dotWidth: 5,
-                        ),
-                      ),
-                      SizedBox(
-                        height: 7,
-                      ),
-                    ],
-                  ),
                 ),
               ),
             ),
@@ -216,13 +208,13 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             ),
                           ],
                         ),
-                        Container(
+                        SizedBox(
                             width: double.infinity,
                             height: 90,
                             child: ListView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                Container(
+                                SizedBox(
                                   width: 90,
                                   child: Card(
                                     color: Colors.lightGreen[200],
@@ -267,7 +259,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                     ),
                                   ),
                                 ),
-                                Container(
+                                SizedBox(
                                   width: 90,
                                   child: Card(
                                     color: Colors.red[200],
@@ -312,7 +304,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                     ),
                                   ),
                                 ),
-                                Container(
+                                SizedBox(
                                   width: 90,
                                   child: Card(
                                     color: Colors.pink[200],
@@ -357,7 +349,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                                     ),
                                   ),
                                 ),
-                                Container(
+                                SizedBox(
                                   width: 90,
                                   child: Card(
                                     color: Colors.orange[200],
@@ -462,11 +454,11 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
                             child: PageView(
                               scrollDirection: Axis.horizontal,
                               children: [
-                                lesson_card('برنامه نویسی #C', 'رضا رزم ارا',
+                                lessoncard('برنامه نویسی #C', 'رضا رزم ارا',
                                     'assets/images/chemistry.png'),
-                                lesson_card('زبان انگلیسی', 'حمید رضایی',
+                                lessoncard('زبان انگلیسی', 'حمید رضایی',
                                     'assets/images/learning_language.png'),
-                                lesson_card('سفر به لندن', 'احمد رضایی',
+                                lessoncard('سفر به لندن', 'احمد رضایی',
                                     'assets/images/travel.png'),
                               ],
                             ))
@@ -498,8 +490,8 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
   }
 }
 
-Widget lesson_card(String name, String desc, String image_addr) {
-  return Container(
+Widget lessoncard(String name, String desc, String imageAddr) {
+  return SizedBox(
     width: 300,
     child: Card(
       color: Colors.purple[300],
@@ -512,7 +504,7 @@ Widget lesson_card(String name, String desc, String image_addr) {
             top: -5,
             left: 10,
             child: Image.asset(
-              image_addr,
+              imageAddr,
               height: 160,
               width: 160,
             ),
@@ -528,67 +520,59 @@ Widget lesson_card(String name, String desc, String image_addr) {
                       SizedBox(
                         width: 100,
                       ),
-                      Container(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.end,
-                          children: [
-                            Container(
-                              child: Column(
-                                  mainAxisAlignment:
-                                  MainAxisAlignment.spaceBetween,
-                                  children: [
-                                    Text(
-                                      name,
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Column(
+                              mainAxisAlignment:
+                              MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
+                                  name,
+                                  textDirection: TextDirection.rtl,
+                                  style: TextStyle(
+                                      fontFamily: 'Vazir',
+                                      fontSize: 18,
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ]),
+                          SizedBox(
+                            height: 7,
+                          ),
+                          Column(
+                            children: [
+                              Row(
+                                children: [
+                                  Center(
+                                    child: Text(
+                                      " با $desc",
                                       textDirection: TextDirection.rtl,
                                       style: TextStyle(
                                           fontFamily: 'Vazir',
-                                          fontSize: 18,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold),
+                                          fontSize: 12),
                                     ),
-                                  ]),
-                            ),
-                            SizedBox(
-                              height: 7,
-                            ),
-                            Container(
-                              child: Column(
-                                children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        child: Center(
-                                          child: Text(
-                                            " با $desc",
-                                            textDirection: TextDirection.rtl,
-                                            style: TextStyle(
-                                                fontFamily: 'Vazir',
-                                                fontSize: 12),
-                                          ),
-                                        ),
-                                      ),
-                                      CircleAvatar(
-                                        radius: 15.0,
-                                        child: ClipRRect(
-                                          child: Image.asset(
-                                            'assets/images/avatar.jpg',
-                                            height: 30,
-                                            width: 30,
-                                          ),
-                                          borderRadius:
-                                          BorderRadius.circular(50.0),
-                                        ),
-                                      ),
-                                    ],
                                   ),
-                                  SizedBox(
-                                    height: 10,
+                                  CircleAvatar(
+                                    radius: 15.0,
+                                    child: ClipRRect(
+                                      child: Image.asset(
+                                        'assets/images/avatar.jpg',
+                                        height: 30,
+                                        width: 30,
+                                      ),
+                                      borderRadius:
+                                      BorderRadius.circular(50.0),
+                                    ),
                                   ),
                                 ],
                               ),
-                            )
-                          ],
-                        ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                            ],
+                          )
+                        ],
                       ),
                     ]),
                 SizedBox(
